@@ -6,3 +6,4 @@
 4.  Создал маршруты для методов контроллеров
 5.  User register
 6.  User login
+7.  User profile. User logout
