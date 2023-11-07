@@ -9,3 +9,4 @@
 7.  User profile. User logout
 8.  Create Event
 9.  List Event
+10. Single Event

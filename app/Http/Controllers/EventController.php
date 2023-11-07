@@ -46,6 +46,30 @@ class EventController extends Controller
     }
 
     public function single($id){
+        $u_id = auth()->user()->id;
+
+        if(Event::where([
+            "id" => $id,
+            "user_id" => $u_id
+        ])->exists()){
+
+            $event = Event::where([
+                "id" => $id,
+                "user_id" => $u_id
+            ])->first();
+
+            return response()->json([
+                "status" => true,
+                "message" => "Event detail",
+                "data" => $event
+            ]);
+        }else{
+
+            return response()->json([
+                "status" => false,
+                "message" => "Event not found"
+            ]);
+        }
 
     }
 
