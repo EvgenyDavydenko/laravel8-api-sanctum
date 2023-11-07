@@ -7,3 +7,4 @@
 5.  User register
 6.  User login
 7.  User profile. User logout
+8.  Create Event
