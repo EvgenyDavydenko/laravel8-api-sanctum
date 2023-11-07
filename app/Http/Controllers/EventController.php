@@ -74,6 +74,31 @@ class EventController extends Controller
     }
 
     public function delete($id){
+        $u_id = auth()->user()->id;
 
+        if(Event::where([
+            "id" => $id,
+            "user_id" => $u_id
+        ])->exists()){
+
+            $event = Event::where([
+                "id" => $id,
+                "user_id" => $u_id
+            ])->first();
+
+            $event->delete();
+
+            return response()->json([
+                "status" => true,
+                "message" => "Event has been deleted successfully"
+            ]);
+
+        }else{
+
+            return response()->json([
+                "status" => false,
+                "message" => "Event not found"
+            ]);
+        }
     }
 }
