@@ -6,19 +6,19 @@ use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
-    public function createEvent(Request $request){
+    public function create(Request $request){
 
     }
 
-    public function listEvent(){
+    public function list(){
 
     }
 
-    public function singleEvent($id){
+    public function single($id){
 
     }
 
-    public function deleteEvent($id){
+    public function delete($id){
 
     }
 }
