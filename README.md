@@ -8,3 +8,4 @@
 6.  User login
 7.  User profile. User logout
 8.  Create Event
+9.  List Event

@@ -17,13 +17,13 @@ class EventController extends Controller
         // user id + create data
         $u_id = auth()->user()->id;
 
-        $p = new Event();
+        $event = new Event();
 
-        $p->user_id = $u_id;
-        $p->title = $request->title;
-        $p->descr = $request->descr;
+        $event->user_id = $u_id;
+        $event->title = $request->title;
+        $event->descr = $request->descr;
 
-        $p->save();
+        $event->save();
 
 
         // send response
@@ -34,7 +34,15 @@ class EventController extends Controller
     }
 
     public function list(){
+        $u_id = auth()->user()->id;
 
+        $event = Event::where("user_id", $u_id)->get();
+
+        return response()->json([
+            "status" => true,
+            "message" => "Events list",
+            "data" => $event
+        ]);
     }
 
     public function single($id){
