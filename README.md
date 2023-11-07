@@ -5,3 +5,4 @@
 3.  Создал контроллеры для моделей User и Event: `php artisan make:controller EventController`
 4.  Создал маршруты для методов контроллеров
 5.  User register
+6.  User login
